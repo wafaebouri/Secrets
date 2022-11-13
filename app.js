@@ -4,7 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const encrypt = require("mongoose-encryption")
+const encrypt = require("mongoose-encryption");
+const PORT = process.env.PPRT || 3030;
 
 const app = express();
 
@@ -77,8 +78,10 @@ app.post("/login", function(req, res) {
     });
   });
 
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
 
-
-app.listen(3000, function(){
-  console.log("Server started on port 3000.");
-})
+// app.listen(3000, function(){
+//   console.log("Server started on port 3000.");
+// })
