@@ -78,10 +78,8 @@ app.post("/login", function(req, res) {
     });
   });
 
-app.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`);
-});
 
-// app.listen(3000, function(){
-//   console.log("Server started on port 3000.");
-// })
+
+app.listen(3000, function(){
+  console.log("Server started on port 3000.");
+})
