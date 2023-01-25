@@ -5,8 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const encrypt = require("mongoose-encryption");
-const port = 8080;
-const host = '0.0.0.0';
+
 
 const app = express();
 
@@ -78,9 +77,10 @@ app.post("/login", function(req, res) {
       }
     });
   });
-
-app.listen(port, host);
-console.log(`Running on http://${host}:${port}`);
+const PORT = process.env.PORT || 3000
+server.listen(PORT, () => {
+  console.log('Server listening on http://localhost:' + PORT)
+})
 
 // app.listen(3000, function(){
 //   console.log("Server started on port 3000.");
